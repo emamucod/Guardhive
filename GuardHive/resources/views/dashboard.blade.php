@@ -1,6 +1,15 @@
 <x-app-layout>
     @section('page-title', 'ESP32-CAM LIVE FEED')
 
+    <div style="display: flex; justify-content: flex-end; padding: 1rem 2rem;">
+        <form method="POST" action="{{ route('logout') }}">
+            @csrf
+            <button type="submit" class="stop-btn" style="padding: 8px 16px; font-size: 14px;">
+                LOGOUT
+            </button>
+        </form>
+    </div>
+
     <div class="stream-container">
         <div class="stream-box">
             <div class="stream-placeholder" id="stream-placeholder">

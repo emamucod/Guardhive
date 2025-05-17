@@ -273,6 +273,7 @@
                 transparent 55%
             );
         }
+        
 
         .capture-btn::after {
             background: linear-gradient(
@@ -334,15 +335,15 @@
 
     <div class="sidebar">
         <h2>GUARD HIVE</h2>
-        <div class="menu-item active">
-            <a href="{{ route('dashboard') }}" style="color: inherit; text-decoration: none; display: block;">Dashboard</a>
-        </div>
-        <div class="menu-item">
-            <a href="{{ route('monitoring') }}" style="color: inherit; text-decoration: none; display: block;">Monitoring</a>
-        </div>
-        <div class="menu-item">
-            <a>Settings</a>
-        </div>
+        <div class="menu-item {{ request()->routeIs('dashboard') ? 'active' : '' }}">
+    <a href="{{ route('dashboard') }}"style="color: inherit; text-decoration: none; display: block;">Dashboard</a>
+</div>
+        <div class="menu-item {{ request()->routeIs('monitoring*') ? 'active' : '' }}">
+    <a href="{{ route('monitoring') }}"style="color: inherit; text-decoration: none; display: block;">Monitoring</a>
+</div>
+        <div class="menu-item {{ request()->routeIs('settings') ? 'active' : '' }}">
+        <a href="{{ route('settings') }}" style="color: inherit; text-decoration: none; display: block;">Settings</a>
+    </div>
     </div>
 
     <main class="main-content">
